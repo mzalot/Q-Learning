@@ -1,4 +1,6 @@
 # Q-Learning
+Code from technobium used: https://github.com/technobium/q-learning-java
+
 1. What is Q Learning? What does the Q stand for (and what about the "Learning")?
 Q learning is a model free reinforcement learning algorithm which works to learn a policy that maximizes the total reward or the best option. Model free means it does not need to have a the model of the environment it is running in. Q learning can handle environments that change and rewards without changing the learning algorithm. The Q stands for quality because the algorithm finds the best option at a given state. Q-learning finds the path of actions that gets the greatest award. The learning part is that the algorithm learns the best way to do something that has the maximum yield.
 
