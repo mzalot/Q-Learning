@@ -17,6 +17,7 @@ import java.util.Random;
 
 public class QLearning {
     //add maze class so it creates the maze
+    private Maze m;
 
     private final double alpha = 0.1; // Learning rate
     private final double gamma = 0.9; // Eagerness - 0 looks in the near future, 1 looks in the distant future
@@ -40,9 +41,14 @@ public class QLearning {
         ql.calculateQ();
         ql.printQ();
         ql.printPolicy();
+
     }
 
     public void init() {
+        //initialize maze and call function to create maze
+        m = new Maze();
+        m.buildMaze();
+
         File file = new File("src/Maze.txt");
 
         R = new int[statesCount][statesCount];
