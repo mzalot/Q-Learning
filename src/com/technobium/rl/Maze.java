@@ -24,7 +24,7 @@ public class Maze {
 
     //default constructor
     public Maze(){
-        Random r = new Random();
+        r = new Random();
         width = 5;
         height = 5;
     }
@@ -46,19 +46,22 @@ public class Maze {
             if(spacesAdded % 5 == 0 && spacesAdded != 0){
                 s += "\n";
             }
-            clearOrBlocked = r.nextInt(2);
+            clearOrBlocked = r.nextInt(3);
             //check if it is at the destination
             if(i == destination){
                 s+= "F";
-            }else if(clearOrBlocked == 0){
+                spacesAdded += 1;
+            }else if(clearOrBlocked == 0 || clearOrBlocked == 1){
                 s += "0";
+                spacesAdded += 1;
             }else{
                 s += "X";
+                spacesAdded += 1;
             }
         }
         //add the string to the file
         try {
-            FileWriter myWriter = new FileWriter("Maze.txt");
+            FileWriter myWriter = new FileWriter("src/Maze.txt");
             myWriter.write(s);
             myWriter.close();
         } catch (IOException e) {
